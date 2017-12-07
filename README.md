@@ -4,6 +4,11 @@
 
 ## About
 
+This project enforces some Closure compiler checks as ESLint rules, to catch errors earlier
+in development.
+
+## Open Sphere
+
 OpenSphere was developed at the National Geospatial-Intelligence Agency (NGA) in collaboration with BIT Systems. The government has "unlimited rights" and is releasing this software to increase the impact of government investments by providing developers with the opportunity to take things in new directions. The software use, modification, and distribution rights are stipulated within the Apache license.
 
 ## Pull Requests
