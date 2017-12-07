@@ -9,6 +9,10 @@
     "Kevin Schmidt <kschmidt@caci.com>",
     "William Wall <wwall@caci.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngageoint/eslint-plugin-opensphere.git"
+  },
   "scripts": {
     "test": "eslint ."
   },
