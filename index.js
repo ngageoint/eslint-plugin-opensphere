@@ -7,6 +7,7 @@ module.exports = {
     'provides-first': require('./provides-first').rule,
     'provides-sorted': require('./provides-sorted').rule,
     'requires-first': require('./requires-first').rule,
+    'require-jsdoc': require('./require-jsdoc').rule,
     'requires-sorted': require('./requires-sorted').rule
   }
 };

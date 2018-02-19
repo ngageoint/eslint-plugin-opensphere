@@ -25,22 +25,42 @@ function isGoogStatement(node, name) {
     isGoogCallExpression(node.expression, name);
 }
 
+/**
+ * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the expression is a goog.provide call
+ */
 exports.isProvideExpression = function(node) {
   return isGoogCallExpression(node, 'provide');
 };
 
+/**
+ * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the statement is a goog.provide call
+ */
 exports.isProvideStatement = function(node) {
   return isGoogStatement(node, 'provide');
 };
 
+/**
+ * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the expression is a goog.require call
+ */
 exports.isRequireExpression = function(node) {
   return isGoogCallExpression(node, 'require');
 };
 
+/**
+ * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the statement is a goog.require call
+ */
 exports.isRequireStatement = function(node) {
   return isGoogStatement(node, 'require');
 };
 
+/**
+ * @param {!AST.Node} node The node
+ * @return {string}
+ */
 var getName = exports.getName = function(node) {
   if (node.type !== 'MemberExpression') {
     return;
