@@ -17,12 +17,6 @@
     "test": "eslint .",
     "semantic-release": "semantic-release"
   },
-  "eslintConfig": {
-    "extends": "opensphere",
-    "env": {
-      "es6": true
-    }
-  },
   "release": {
     "verifyConditions": [
       "@semantic-release/condition-travis",
@@ -54,8 +48,6 @@
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.1",
-    "eslint-config-opensphere": "^1.0.0",
-    "eslint-plugin-google-camelcase": "0.0.2",
     "husky": "^0.13.4",
     "semantic-release": "^11.0.2",
     "validate-commit-msg": "^2.14.0"
