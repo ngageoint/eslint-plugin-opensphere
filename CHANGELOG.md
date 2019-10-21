@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.0.1...v2.1.0) (2019-10-21)
+
+
+### Features
+
+* **goog:** allow goog.module statements to precede goog.require ([8580945](https://github.com/ngageoint/eslint-plugin-opensphere/commit/8580945a5680ef3e08ad37c5e3de4b3bd8cbd014))
+
 ## [2.0.1](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.0.0...v2.0.1) (2019-07-05)
 
 
