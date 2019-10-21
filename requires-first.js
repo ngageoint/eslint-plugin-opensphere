@@ -5,7 +5,7 @@ const util = require('./util');
 exports.rule = {
   meta: {
     docs: {
-      description: 'require that all goog.require() precede other statements (except goog.provide())',
+      description: 'require that all goog.require() precede other statements (except goog.provide() and goog.module())',
       category: 'Closure Compiler'
     }
   },
@@ -20,7 +20,7 @@ exports.rule = {
             if (otherSeen) {
               return context.report(statement, 'Expected goog.require() to precede other statements');
             }
-          } else if (!util.isProvideStatement(statement)) {
+          } else if (!util.isProvideStatement(statement) && !util.isModuleStatement(statement)) {
             otherSeen = true;
           }
         });
