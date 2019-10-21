@@ -35,6 +35,14 @@ exports.isProvideExpression = function(node) {
 
 /**
  * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the statement is a goog.module call
+ */
+exports.isModuleStatement = function(node) {
+  return isGoogStatement(node, 'module');
+};
+
+/**
+ * @param {!AST.Node} node The node
  * @return {boolean} Whether or not the statement is a goog.provide call
  */
 exports.isProvideStatement = function(node) {
