@@ -41,7 +41,8 @@ exports.rule = {
             }
 
             prevRequire = currRequire;
-          } else if (!util.isProvideStatement(statement)) {
+          } else if (!util.isProvideStatement(statement) && !util.isModuleStatement(statement) &&
+              !util.isLegacyNamespaceStatement(statement)) {
             otherSeen = true;
           }
         });
