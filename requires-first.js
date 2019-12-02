@@ -20,7 +20,8 @@ exports.rule = {
             if (otherSeen) {
               return context.report(statement, 'Expected goog.require() to precede other statements');
             }
-          } else if (!util.isProvideStatement(statement) && !util.isModuleStatement(statement)) {
+          } else if (!util.isProvideStatement(statement) && !util.isModuleStatement(statement) &&
+              !util.isLegacyNamespaceStatement(statement)) {
             otherSeen = true;
           }
         });
