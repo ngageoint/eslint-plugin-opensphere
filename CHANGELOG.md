@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.1.0...v2.2.0) (2019-12-02)
+
+
+### Features
+
+* **goog:** add rules for goog.module and refactor call detection ([2e7758d](https://github.com/ngageoint/eslint-plugin-opensphere/commit/2e7758d4eca2242b31e7a37c2361de2a4f9eec02))
+
 # [2.1.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.0.1...v2.1.0) (2019-10-21)
 
 
