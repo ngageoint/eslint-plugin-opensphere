@@ -28,11 +28,12 @@ function isCallExpression(node, name) {
 }
 
 /**
+ * If a node has a module statement. Detects `goog.module` for Closure modules and `goog.declareModuleId` for ES6.
  * @param {!AST.Node} node The node
- * @return {boolean} Whether or not the statement is a goog.module call
+ * @return {boolean} Whether or not the node is a module statement
  */
 exports.isModuleStatement = function(node) {
-  return isCallExpression(node, 'goog.module');
+  return isCallExpression(node, 'goog.module') || isCallExpression(node, 'goog.declareModuleId');
 };
 
 /**
