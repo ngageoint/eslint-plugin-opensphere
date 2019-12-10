@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.0...v2.3.1) (2019-12-10)
+
+
+### Bug Fixes
+
+* **eslint:** eslint is now a direct dependency ([e4df737](https://github.com/ngageoint/eslint-plugin-opensphere/commit/e4df737c6212d63699376d7d7b4bdd5adc8cc73f))
+
 # [2.3.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.2.0...v2.3.0) (2019-12-10)
 
 
