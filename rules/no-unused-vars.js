@@ -131,11 +131,18 @@ module.exports = {
     /**
      * Generate the warning message about the variable being
      * assigned and unused, including the ignore pattern if configured.
+     * @param {Variable} unusedVar eslint-scope variable object.
      * @return {string} The warning message to be used with this unused variable.
      */
-    function getAssignedMessage() {
-      const additional = config.varsIgnorePattern ?
-        ` Allowed unused vars must match ${config.varsIgnorePattern.toString()}.` : '';
+    function getAssignedMessage(unusedVar) {
+      let additional = '';
+
+      if (isGoogRequire(unusedVar)) {
+        additional = ' Did you mean to use goog.requireType?';
+      } else if (config.varsIgnorePattern) {
+        additional = ` Allowed unused vars must match ${config.varsIgnorePattern.toString()}.`;
+      }
+
 
       return `'{{name}}' is assigned a value but never used.${additional}`;
     }
@@ -165,6 +172,27 @@ module.exports = {
         }
 
         return node.parent.type.indexOf('Export') === 0;
+      }
+      return false;
+    }
+
+    /**
+     * Determines if a given variable is being exported from a module.
+     * @param {Variable} variable eslint-scope variable object.
+     * @return {boolean} True if the variable is exported, false if not.
+     * @private
+     */
+    function isGoogRequire(variable) {
+      const definition = variable.defs[0];
+
+      if (definition) {
+        const node = definition.node;
+        if (node.type === 'VariableDeclarator' && node.init && node.init.type === 'CallExpression') {
+          const callee = node.init.callee;
+          if (callee && callee.object.name === 'goog' && callee.property.name === 'require') {
+            return true;
+          }
+        }
       }
       return false;
     }
@@ -617,7 +645,7 @@ module.exports = {
             context.report({
               node: unusedVar.identifiers[0],
               message: unusedVar.references.some((ref) => ref.isWrite())
-                ? getAssignedMessage()
+                ? getAssignedMessage(unusedVar)
                 : getDefinedMessage(unusedVar),
               data: unusedVar
             });
