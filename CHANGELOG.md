@@ -1,3 +1,11 @@
+# [2.3.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.2.0...v2.3.0) (2019-12-10)
+
+
+### Features
+
+* allow goog.requireType in custom no-unused-vars ([90825b1](https://github.com/ngageoint/eslint-plugin-opensphere/commit/90825b195e571abc70bb55ad52ce271e8c85c561))
+* suggest goog.requireType when assignment is from goog.require ([151ee7e](https://github.com/ngageoint/eslint-plugin-opensphere/commit/151ee7efb813b4310ef05833429c61e67afad940))
+
 # [2.2.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.1.0...v2.2.0) (2019-12-02)
 
 
