@@ -189,7 +189,8 @@ module.exports = {
         const node = definition.node;
         if (node.type === 'VariableDeclarator' && node.init && node.init.type === 'CallExpression') {
           const callee = node.init.callee;
-          if (callee && callee.object.name === 'goog' && callee.property.name === 'require') {
+          if (callee && callee.type === 'MemberExpression' &&
+              callee.object.name === 'goog' && callee.property.name === 'require') {
             return true;
           }
         }
@@ -210,7 +211,8 @@ module.exports = {
         const node = definition.node;
         if (node.type === 'VariableDeclarator' && node.init && node.init.type === 'CallExpression') {
           const callee = node.init.callee;
-          if (callee && callee.object.name === 'goog' && callee.property.name === 'requireType') {
+          if (callee && callee.type === 'MemberExpression' &&
+              callee.object.name === 'goog' && callee.property.name === 'requireType') {
             return true;
           }
         }
