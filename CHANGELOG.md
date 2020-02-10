@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.1...v2.3.2) (2020-02-10)
+
+
+### Bug Fixes
+
+* verify node type before referencing node-specific properties ([c04098e](https://github.com/ngageoint/eslint-plugin-opensphere/commit/c04098e4108409ca585eddf17a27acf52835a3d7))
+
 ## [2.3.1](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.0...v2.3.1) (2019-12-10)
 
 
