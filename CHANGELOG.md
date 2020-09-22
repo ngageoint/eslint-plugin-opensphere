@@ -1,3 +1,11 @@
+# [2.4.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.2...v2.4.0) (2020-09-22)
+
+
+### Features
+
+* detect variable use as a jsdoc type ([150262e](https://github.com/ngageoint/eslint-plugin-opensphere/commit/150262eb5a9b772aff65c517c1bc86bdf9408f61))
+* verify the var is a typedef ([1290c43](https://github.com/ngageoint/eslint-plugin-opensphere/commit/1290c43081893aada055f27480ed7f6278518634))
+
 ## [2.3.2](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.1...v2.3.2) (2020-02-10)
 
 
