@@ -66,6 +66,7 @@ module.exports = {
 
   create(context) {
     const sourceCode = context.getSourceCode();
+    const comments = sourceCode.getAllComments();
 
     const REST_PROPERTY_TYPE = /^(?:RestElement|(?:Experimental)?RestProperty)$/u;
 
@@ -173,6 +174,42 @@ module.exports = {
 
         return node.parent.type.indexOf('Export') === 0;
       }
+      return false;
+    }
+
+    /**
+     * Determines if an AST node is a typedef by verifying:
+     *  - The node is a VariableDeclarator.
+     *  - It is not initialized to anything.
+     *  - The parent comments contain the @typedef annotation.
+     *  - The parent is at the root scope.
+     *
+     * @param {ASTNode} node The AST node.
+     * @return {boolean} True if the node is a typedef, false if not.
+     */
+    function isTypedef(node) {
+      const leadingComments = sourceCode.getCommentsBefore(node.parent);
+      return node && node.type === 'VariableDeclarator' && !node.init &&
+        leadingComments && leadingComments.some((comment) => /\* @typedef/.test(comment.value)) &&
+        node.parent.parent && node.parent.parent.type === 'Program';
+    }
+
+    /**
+     * Determines if a given variable is referenced as a JSDoc type.
+     * @param {Variable} variable eslint-scope variable object.
+     * @return {boolean} True if the variable is used as a JSDoc type, false if not.
+     * @private
+     */
+    function isJsdocType(variable) {
+      const definition = variable.defs[0];
+
+      if (definition && isTypedef(definition.node)) {
+        const pattern = `{[!?]?([^}]*\\|)?${definition.name.name}(\\|[^}]*)?}`;
+        const regexp = new RegExp(pattern);
+
+        return comments.some((comment) => regexp.test(comment.value));
+      }
+
       return false;
     }
 
@@ -618,7 +655,7 @@ module.exports = {
           }
 
           if (!isUsedVariable(variable) && !isExported(variable) && !hasRestSpreadSibling(variable) &&
-              !isGoogRequireType(variable)) {
+              !isGoogRequireType(variable) && !isJsdocType(variable)) {
             unusedVars.push(variable);
           }
         }
