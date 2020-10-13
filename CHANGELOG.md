@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.4.0...v2.4.1) (2020-10-13)
+
+
+### Bug Fixes
+
+* don't attempt to determine if a typedef is referenced locally ([e163f18](https://github.com/ngageoint/eslint-plugin-opensphere/commit/e163f18d1c299cc3ffde46a5c4d1ee07c4d32d32))
+
 # [2.4.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.3.2...v2.4.0) (2020-09-22)
 
 
