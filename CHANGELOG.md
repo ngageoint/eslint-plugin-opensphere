@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.4.1...v2.5.0) (2021-01-19)
+
+
+### Features
+
+* **es6:** allow goog.declareModuleId before goog.require ([4f87d63](https://github.com/ngageoint/eslint-plugin-opensphere/commit/4f87d637fab1f601c9f83907fd654a193b0b6d0f))
+
 ## [2.4.1](https://github.com/ngageoint/eslint-plugin-opensphere/compare/v2.4.0...v2.4.1) (2020-10-13)
 
 
