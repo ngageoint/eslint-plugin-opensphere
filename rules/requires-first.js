@@ -21,7 +21,7 @@ exports.rule = {
               return context.report(statement, 'Expected goog.require() to precede other statements');
             }
           } else if (!util.isProvideStatement(statement) && !util.isModuleStatement(statement) &&
-              !util.isLegacyNamespaceStatement(statement)) {
+              !util.isLegacyNamespaceStatement(statement) && !util.isDeclareModuleIdStatement(statement)) {
             otherSeen = true;
           }
         });

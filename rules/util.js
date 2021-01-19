@@ -37,6 +37,14 @@ exports.isModuleStatement = function(node) {
 
 /**
  * @param {!AST.Node} node The node
+ * @return {boolean} Whether or not the statement is a goog.declareModuleId call
+ */
+exports.isDeclareModuleIdStatement = function(node) {
+  return isCallExpression(node, 'goog.declareModuleId');
+};
+
+/**
+ * @param {!AST.Node} node The node
  * @return {boolean} Whether or not the statement is a goog.module.declareLegacyNamespace call
  */
 exports.isLegacyNamespaceStatement = function(node) {
