@@ -665,9 +665,8 @@ module.exports = {
           if (unusedVar.defs.length > 0) {
             context.report({
               node: unusedVar.identifiers[0],
-              message: unusedVar.references.some((ref) => ref.isWrite())
-                ? getAssignedMessage(unusedVar)
-                : getDefinedMessage(unusedVar),
+              message: unusedVar.references.some((ref) => ref.isWrite()) ?
+                getAssignedMessage(unusedVar) : getDefinedMessage(unusedVar),
               data: unusedVar
             });
 
